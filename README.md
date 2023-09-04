@@ -2,7 +2,7 @@
 A command-line tool to discover your aws services and resources 
 Please make sure torun aws config or [set env. vars](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_environment.html) with a user dredentials that have read premissions to all resources
 
-### How to use the tool##
+### How to use the tool ###
 1. Download the [relevant binary](https://github.com/IlanTeraSky/terasky-discover-aws-resources/releases) for your machine.
 2. For Linux and MAC users, make the file executable by running this command:
 ```
