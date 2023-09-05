@@ -12,8 +12,12 @@ chmod +x terasky-discover-aws-resources-<env>
 4. Run the executable and watch the output or write to file.
 
 ### Currently supported services: ###
-1. EC2
-2. S3
-3. VPC
-4. Lambda
-5. API Gateway
+1. EC2 - Describe Instances
+2. S3 - List Buckets
+3. VPC - Describe VPCs
+4. Lambda - List Functions
+5. API Gateway - Get REST APIs
+6. AppConfig - List Applications
+7. Athena - List Data Catalogs
+8. Backup - List Backup Plans
+9. CloudFormation - 

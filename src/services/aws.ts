@@ -12,4 +12,8 @@ export const ec2 = new AWS.EC2();
 export const s3 = new AWS.S3();
 export const lambda = new AWS.Lambda();
 export const api_gateways = new AWS.APIGateway();
+export const appConfig = new AWS.AppConfig();
+export const athena = new AWS.Athena();
+export const backup = new AWS.Backup();
+export const cloud_formation = new AWS.CloudFormation();
 // Add more service objects for other AWS services you want to query

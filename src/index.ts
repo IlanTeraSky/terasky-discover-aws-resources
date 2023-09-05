@@ -2,7 +2,12 @@ import { getEC2Details, getVPCDetails } from './services/ec2/ec2';
 import { getS3Details } from './services/s3/s3';
 import { getLambdaFunctions } from './services/lambda/lambda';
 import { getRestAPIs } from './services/api-gateway/api-gateway';
+import { listAppConfigapplications } from './services/app-config/app-config';
+import { listDataCatalogs } from './services/athena/athena';
+import { listBackupPlans } from './services/backup/backup';
 import { ec2, awsConfig } from './services/aws'
+import { listStackSets } from './services/cloud-formation/cloud-formation';
+
 
 // Function to list AWS services in all regions
 async function listServicesInAllRegions() {
@@ -12,7 +17,11 @@ async function listServicesInAllRegions() {
         'S3',  // Amazon Simple Storage Service
         'Lambda', // Amazon Lambda functions
         'VPC', // Amazon Virtual Private Cloud
-        'APIGateway' // Amazon API Gateway
+        'APIGateway', // Amazon API Gateway
+        'AppConfig', // Amazon App Config
+        'Athena', // Amazon Athena
+        'Backup', // AWS Backup
+        'CloudFormation', // AWS CloudFormation
         // Add more service names here as needed
     ];
     if (regions.Regions) {
@@ -57,6 +66,22 @@ async function getServiceDetails(region: string, serviceName: string) {
         case 'APIGateway':
             const apis = await getRestAPIs();
             console.log(`REST APIs in ${region}:`, JSON.stringify(apis, null, 4));
+            break;
+        case 'AppConfig':
+            const applications = await listAppConfigapplications();
+            console.log(`REST APIs in ${region}:`, JSON.stringify(applications, null, 4));
+            break;
+        case 'Athena':
+            const dataCatalogs = await listDataCatalogs();
+            console.log(`REST APIs in ${region}:`, JSON.stringify(dataCatalogs, null, 4));
+            break;
+        case 'Backup':
+            const backupPlans = await listBackupPlans();
+            console.log(`REST APIs in ${region}:`, JSON.stringify(backupPlans, null, 4));
+            break;
+        case 'CloudFormation':
+            const stackSets = await listStackSets();
+            console.log(`REST APIs in ${region}:`, JSON.stringify(stackSets, null, 4));
             break;
         // Add cases for other services here
         default:
