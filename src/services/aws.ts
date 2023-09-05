@@ -16,4 +16,5 @@ export const appConfig = new AWS.AppConfig();
 export const athena = new AWS.Athena();
 export const backup = new AWS.Backup();
 export const cloud_formation = new AWS.CloudFormation();
+export const cloud_front = new AWS.CloudFront();
 // Add more service objects for other AWS services you want to query

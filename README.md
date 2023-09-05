@@ -1,5 +1,5 @@
 # terasky-discover-aws-resources
-A command-line tool to discover your aws services and resources 
+A command-line tool to discover your aws services and resources across all regions
 Please make sure torun aws config or [set env. vars](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_environment.html) with a user dredentials that have read premissions to all resources
 
 ### How to use the tool ###
@@ -20,4 +20,6 @@ chmod +x terasky-discover-aws-resources-<env>
 6. AppConfig - List Applications
 7. Athena - List Data Catalogs
 8. Backup - List Backup Plans
-9. CloudFormation - 
+9. CloudFormation - List StackSets
+10. CloudFront - List Distributions
+

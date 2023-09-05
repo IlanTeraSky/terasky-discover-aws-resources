@@ -1,5 +1,5 @@
-import { lambda } from '../aws';
+import { cloud_front } from '../aws';
 
-export async function getLambdaFunctions() {
-return await lambda.listFunctions().promise();
+export async function listDitributions() {
+return await cloud_front.listDistributions().promise();
 }

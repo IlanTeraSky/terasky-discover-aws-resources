@@ -7,6 +7,7 @@ import { listDataCatalogs } from './services/athena/athena';
 import { listBackupPlans } from './services/backup/backup';
 import { ec2, awsConfig } from './services/aws'
 import { listStackSets } from './services/cloud-formation/cloud-formation';
+import { listDitributions } from './services/cloud-front/cloud-front';
 
 
 // Function to list AWS services in all regions
@@ -22,6 +23,7 @@ async function listServicesInAllRegions() {
         'Athena', // Amazon Athena
         'Backup', // AWS Backup
         'CloudFormation', // AWS CloudFormation
+        'CloudFront', // AWS CloudFront
         // Add more service names here as needed
     ];
     if (regions.Regions) {
@@ -82,6 +84,10 @@ async function getServiceDetails(region: string, serviceName: string) {
         case 'CloudFormation':
             const stackSets = await listStackSets();
             console.log(`REST APIs in ${region}:`, JSON.stringify(stackSets, null, 4));
+            break;
+        case 'CloudFormation':
+            const distributions = await listDitributions();
+            console.log(`REST APIs in ${region}:`, JSON.stringify(distributions, null, 4));
             break;
         // Add cases for other services here
         default:
